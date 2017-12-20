@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "body": "^5.1.0",
+    "bootstrap": "^3.3.7",
     "express": "^4.16.2",
     "parser": "^0.1.4",
     "plaid": "^2.2.0"
