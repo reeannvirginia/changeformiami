@@ -22,3 +22,11 @@
 
 .byebug_history
 .env
+
+# .gitignore
+
+# Ignore environment variables
+.env
+
+PUBLISHABLE_KEY="pk_test_j3F39hNFF3YMGqORDlvORGVh"
+SECRET_KEY="sk_test_IVjM6GEWXRLCt4eC23mKETuX"

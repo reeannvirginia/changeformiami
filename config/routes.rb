@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :donor_logins, controllers: {registration: "registrations"}
+  resources :charges, only: [:new, :create]
+  devise_for :donor_logins
   # devise_for :donors
-  resources :subscribers
   resources :funds
   resources :donations
   resources :organizations
   resources :donors
 
-  post 'get_access_token', to: "donations#get_access_token"
-  root "funds#index"
+
+get 'thanks', to: 'charges#thanks', as: 'thanks'
+
+ root to: 'funds#index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

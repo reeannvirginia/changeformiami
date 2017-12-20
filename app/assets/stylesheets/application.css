@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD
  @import "bootstrap";
+=======
+ /* @import "bootstrap"; */
+>>>>>>> 80c7225f8d4dc6a1f2078cad5de944485024dfbe
 
 html, body {
 	height: 100%;
@@ -82,4 +86,4 @@ footer {
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	color: #bab8b8;
-} 
+}

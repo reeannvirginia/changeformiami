@@ -5,15 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-health = Fund.create(
+Donation.destroy_all
+Fund.destroy_all
+Organization.destroy_all
+
+
+health = Fund.find_or_create_by!(
   category: 'Health/Human Services'
 )
 
-education = Fund.create(
+education = Fund.find_or_create_by!(
   category: 'Education'
 )
 
-animals = Fund.create(
+animals = Fund.find_or_create_by!(
   category: 'Animals'
 )
 
@@ -21,8 +26,8 @@ p "created #{Fund.count} funds!"
 
 
 
-org1 = Organization.create(
-  fund_ids: health.id,
+org1 = Organization.create!(
+  funds: [health],
   name: 'Better Way of Miami',
   category: 'Health/Human Services',
   address: '800 NW 28 Street Miami, FL 33127',
@@ -30,8 +35,8 @@ org1 = Organization.create(
   website: 'http://betterwaymiami.org'
 )
 
-org2 = Organization.create(
-  fund_ids: health.id,
+org2 = Organization.create!(
+  funds: [health],
   name: 'Amigos for Kids',
   category: 'Health/Human Services',
   address: '2153 Coral Way, Suite 405 Miami, FL 33145',
@@ -39,8 +44,8 @@ org2 = Organization.create(
   website: 'http://www.amigosforkids.org'
 )
 
-org3 = Organization.create(
-  fund_ids: health.id,
+org3 = Organization.create!(
+  funds: [health],
   name: 'Miami Diaper Bank',
   category: 'Health/Human Services',
   address: '4770 Biscayne Blvd Suite 980 Miami, FL 33137',
@@ -48,8 +53,8 @@ org3 = Organization.create(
   website: 'http://www.miamidiaperbank.com'
 )
 
-org4 = Organization.create(
-  fund_ids: education.id,
+org4 = Organization.create!(
+  funds: [education],
   name: '100 Black Men of South Florida',
   category: 'Education',
   address: '5825 Sunset Dr Ste. 201 South Miami, FL 33143-5222',
@@ -57,8 +62,8 @@ org4 = Organization.create(
   website: 'http://www.100blackmensf.org'
 )
 
-org5 = Organization.create(
-  fund_ids: education.id,
+org5 = Organization.create!(
+  funds: [education],
   name: 'CODEART',
   category: 'Education',
   address: '6440 SW 98TH St. Miami, FL 33156',
@@ -66,8 +71,8 @@ org5 = Organization.create(
   website: 'http://www.code-art.com'
 )
 
-org6 = Organization.create(
-  fund_ids: education.id,
+org6 = Organization.create!(
+  funds: [education],
   name: 'Shake-a-Leg Miami',
   category: 'Education',
   address: '2620 S Bayshore Dr Coconut Grove, FL 33133-5424',
@@ -75,8 +80,8 @@ org6 = Organization.create(
   website: 'http://shakealegmiami.org'
 )
 
-org7 = Organization.create(
-  fund_ids: animals.id,
+org7 = Organization.create!(
+  funds: [animals],
   name: 'The Cat Network',
   category: 'Animals',
   address: 'PO BOX 347228 Coral Gables, FL 33234-7228',
@@ -84,8 +89,8 @@ org7 = Organization.create(
   website: 'http://www.thecatnetwork.org'
 )
 
-org8 = Organization.create(
-  fund_ids: animals.id,
+org8 = Organization.create!(
+  funds: [animals],
   name: 'Everglades Angels Dog Rescue',
   category: 'Animals',
   address: '2637 E. Atlantic Blvd # 269 Pompano Beach, FL 33062',
@@ -93,8 +98,8 @@ org8 = Organization.create(
   website: 'http://www.evergladesangelsdogrescue.org/'
 )
 
-org9 = Organization.create(
-  fund_ids: animals.id,
+org9 = Organization.create!(
+  funds: [animals],
   name: 'Pet Project for Pets',
   category: 'Animals',
   address: '2200 NW 9th Avenue Wilton Manors, FL 33311',

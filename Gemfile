@@ -27,6 +27,8 @@ gem 'devise'
 
 gem 'stripe'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 
 gem 'dotenv-rails', groups: [:development, :test]
